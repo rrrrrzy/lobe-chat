@@ -5,7 +5,7 @@ export default {
       title: '新增助手推荐：',
     },
     defaultMessage:
-      '我是Maple定制化交互模型 ，请问现在能帮您做什么？\n如果需要获得更加专业或定制的助手，可以点击 `+` 创建自定义Agent',
+      '我是 Maple 定制化交互模型 ，请问现在能帮您做什么？\n如果需要获得更加专业或定制的助手，可以点击左侧列表的 `+` 创建自定义 Agent',
     defaultMessageWithoutCreate: '我是您的私人智能助理 {{appName}} ，请问现在能帮您做什么？',
     qa: {
       q01: '介绍一下西北工业大学？',
