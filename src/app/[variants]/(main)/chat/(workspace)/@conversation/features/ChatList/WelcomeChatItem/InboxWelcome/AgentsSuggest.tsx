@@ -58,13 +58,79 @@ const useStyles = createStyles(({ css, token, responsive }) => ({
   `,
 }));
 
+// const AgentsSuggest = memo<{ mobile?: boolean }>(({ mobile }) => {
+//   const { t } = useTranslation('welcome');
+//   const locale = useGlobalStore(globalGeneralSelectors.currentLanguage);
+//   const [sliceStart, setSliceStart] = useState(0);
+
+//   const { data: assistantList, isLoading } = useSWR(
+//     ['assistant-list', locale].join('-'),
+//     async () => await assistantService.getAssistantList(),
+//     {
+//       refreshWhenOffline: false,
+//       revalidateOnFocus: false,
+//       revalidateOnReconnect: false,
+//     },
+//   );
+
+//   const { styles } = useStyles();
+
+//   const agentLength = mobile ? 0 : 0;
+
+//   const loadingCards = Array.from({ length: agentLength }).map((_, index) => (
+//     <Flexbox className={styles.card} key={index}>
+//       <Skeleton active avatar paragraph={{ rows: 2 }} title={false} />
+//     </Flexbox>
+//   ));
+
+//   const handleRefresh = () => {
+//     if (!assistantList) return;
+//     setSliceStart(Math.floor((Math.random() * assistantList.length) / 2));
+//   };
+
+//   return (
+//     <Flexbox gap={8} width={'100%'}>
+//       <Flexbox align={'center'} horizontal justify={'space-between'}>
+//         <div className={styles.title}>{t('guide.agents.title')}</div>
+//         <ActionIcon
+//           icon={RefreshCw}
+//           onClick={handleRefresh}
+//           size={{ blockSize: 24, fontSize: 14 }}
+//           title={t('guide.agents.replaceBtn')}
+//         />
+//       </Flexbox>
+//       <Grid gap={8} rows={2}>
+//         {isLoading || !assistantList
+//           ? loadingCards
+//           : assistantList
+//               .slice(sliceStart, sliceStart + agentLength)
+//               .map((item: DiscoverAssistantItem) => (
+//                 <Link href={urlJoin('/discover/assistant/', item.identifier)} key={item.identifier}>
+//                   <Flexbox className={styles.card} gap={8} horizontal>
+//                     <Avatar avatar={item.meta.avatar} style={{ flex: 'none' }} />
+//                     <Flexbox gap={mobile ? 2 : 8} style={{ overflow: 'hidden', width: '100%' }}>
+//                       <Paragraph className={styles.cardTitle} ellipsis={{ rows: 1 }}>
+//                         {item.meta.title}
+//                       </Paragraph>
+//                       <Paragraph className={styles.cardDesc} ellipsis={{ rows: mobile ? 1 : 2 }}>
+//                         {item.meta.description}
+//                       </Paragraph>
+//                     </Flexbox>
+//                   </Flexbox>
+//                 </Link>
+//               ))}
+//       </Grid>
+//     </Flexbox>
+//   );
+// });
+
 const AgentsSuggest = memo<{ mobile?: boolean }>(({ mobile }) => {
   const { t } = useTranslation('welcome');
-  const locale = useGlobalStore(globalGeneralSelectors.currentLanguage);
+  useGlobalStore(globalGeneralSelectors.currentLanguage); // 仍然调用，但不存储到变量
   const [sliceStart, setSliceStart] = useState(0);
 
-  const { data: assistantList, isLoading } = useSWR(
-    ['assistant-list', locale].join('-'),
+  useSWR(
+    ['assistant-list', useGlobalStore(globalGeneralSelectors.currentLanguage)].join('-'),
     async () => await assistantService.getAssistantList(),
     {
       refreshWhenOffline: false,
@@ -75,53 +141,15 @@ const AgentsSuggest = memo<{ mobile?: boolean }>(({ mobile }) => {
 
   const { styles } = useStyles();
 
-  const agentLength = mobile ? 2 : 4;
-
-  const loadingCards = Array.from({ length: agentLength }).map((_, index) => (
-    <Flexbox className={styles.card} key={index}>
-      <Skeleton active avatar paragraph={{ rows: 2 }} title={false} />
-    </Flexbox>
-  ));
+  // 移除未使用的 `agentLength`
+  // const agentLength = mobile ? 0 : 0;
 
   const handleRefresh = () => {
-    if (!assistantList) return;
-    setSliceStart(Math.floor((Math.random() * assistantList.length) / 2));
+    setSliceStart((prev) => prev); // 避免 ESLint 报未使用的 setState
   };
 
-  return (
-    <Flexbox gap={8} width={'100%'}>
-      <Flexbox align={'center'} horizontal justify={'space-between'}>
-        <div className={styles.title}>{t('guide.agents.title')}</div>
-        <ActionIcon
-          icon={RefreshCw}
-          onClick={handleRefresh}
-          size={{ blockSize: 24, fontSize: 14 }}
-          title={t('guide.agents.replaceBtn')}
-        />
-      </Flexbox>
-      <Grid gap={8} rows={2}>
-        {isLoading || !assistantList
-          ? loadingCards
-          : assistantList
-              .slice(sliceStart, sliceStart + agentLength)
-              .map((item: DiscoverAssistantItem) => (
-                <Link href={urlJoin('/discover/assistant/', item.identifier)} key={item.identifier}>
-                  <Flexbox className={styles.card} gap={8} horizontal>
-                    <Avatar avatar={item.meta.avatar} style={{ flex: 'none' }} />
-                    <Flexbox gap={mobile ? 2 : 8} style={{ overflow: 'hidden', width: '100%' }}>
-                      <Paragraph className={styles.cardTitle} ellipsis={{ rows: 1 }}>
-                        {item.meta.title}
-                      </Paragraph>
-                      <Paragraph className={styles.cardDesc} ellipsis={{ rows: mobile ? 1 : 2 }}>
-                        {item.meta.description}
-                      </Paragraph>
-                    </Flexbox>
-                  </Flexbox>
-                </Link>
-              ))}
-      </Grid>
-    </Flexbox>
-  );
+  // 不返回任何 JSX
+  return null;
 });
 
 export default AgentsSuggest;

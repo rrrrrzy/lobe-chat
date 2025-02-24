@@ -117,7 +117,7 @@ export default {
   },
   Thinking: {
     thinking: '深度思考中...',
-    thought: '已深度思考（用时 {{duration}} 秒）',
-    thoughtWithDuration: '已深度思考',
+    thought: '原deepseek-r1模型深度思考内容（用时 {{duration}} 秒）',
+    thoughtWithDuration: '原deepseek-r1模型深度思考内容',
   },
 };
