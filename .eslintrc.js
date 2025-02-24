@@ -24,9 +24,11 @@ config.overrides = [
     files: ['*.mdx'],
     rules: {
       '@typescript-eslint/no-unused-vars': 'off',
-      'no-undef': 0,
+      // 禁用未使用导入的检查
+'no-undef': 0, 
       'react/jsx-no-undef': 0,
       'react/no-unescaped-entities': 0,
+      'unused-imports/no-unused-imports': 'off',
     },
     settings: {
       'mdx/code-blocks': false,

@@ -12,13 +12,7 @@ tags:
 
 # Deploying Server Database Version Using Docker
 
-<div style={{display:"flex", gap: 4}}>
-  [![][docker-release-shield]][docker-release-link]
-
-  [![][docker-size-shield]][docker-size-link]
-
-  [![][docker-pulls-shield]][docker-pulls-link]
-</div>
+<div style={{display:"flex", gap: 4}} />
 
 <Callout type="info">
   This article assumes that you are familiar with the basic principles and processes of deploying
@@ -161,10 +155,3 @@ $ docker run -it -d --name lobe-chat-database -p 3210:3210 \
   `127.0.0.1`, it will refer to the container's `localhost`. In this case, try using
   `host.docker.internal` instead of `localhost`.
 </Callout>
-
-[docker-pulls-link]: https://hub.docker.com/r/lobehub/lobe-chat-database
-[docker-pulls-shield]: https://img.shields.io/docker/pulls/lobehub/lobe-chat-database?color=45cc11&labelColor=black&style=flat-square
-[docker-release-link]: https://hub.docker.com/r/lobehub/lobe-chat-database
-[docker-release-shield]: https://img.shields.io/docker/v/lobehub/lobe-chat-database?color=369eff&label=docker&labelColor=black&logo=docker&logoColor=white&style=flat-square&sort=semver
-[docker-size-link]: https://hub.docker.com/r/lobehub/lobe-chat-database
-[docker-size-shield]: https://img.shields.io/docker/image-size/lobehub/lobe-chat-database?color=369eff&labelColor=black&style=flat-square&sort=semver

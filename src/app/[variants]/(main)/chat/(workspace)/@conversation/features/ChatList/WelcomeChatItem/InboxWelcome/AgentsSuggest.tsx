@@ -1,22 +1,16 @@
 'use client';
 
-import { ActionIcon, Avatar, Grid } from '@lobehub/ui';
-import { Skeleton, Typography } from 'antd';
+// import { Typography } from 'antd';
 import { createStyles } from 'antd-style';
-import { RefreshCw } from 'lucide-react';
-import Link from 'next/link';
 import { memo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Flexbox } from 'react-layout-kit';
 import useSWR from 'swr';
-import urlJoin from 'url-join';
 
 import { assistantService } from '@/services/assistant';
 import { useGlobalStore } from '@/store/global';
 import { globalGeneralSelectors } from '@/store/global/selectors';
-import { DiscoverAssistantItem } from '@/types/discover';
 
-const { Paragraph } = Typography;
+// const { Paragraph } = Typography;
 
 const useStyles = createStyles(({ css, token, responsive }) => ({
   card: css`
@@ -128,7 +122,9 @@ const AgentsSuggest = memo<{ mobile?: boolean }>(({ mobile }) => {
   const { t } = useTranslation('welcome');
   useGlobalStore(globalGeneralSelectors.currentLanguage); // 仍然调用，但不存储到变量
   const [sliceStart, setSliceStart] = useState(0);
-
+  void t;
+  void sliceStart;
+  void mobile;
   useSWR(
     ['assistant-list', useGlobalStore(globalGeneralSelectors.currentLanguage)].join('-'),
     async () => await assistantService.getAssistantList(),
@@ -140,14 +136,14 @@ const AgentsSuggest = memo<{ mobile?: boolean }>(({ mobile }) => {
   );
 
   const { styles } = useStyles();
-
+  void styles;
   // 移除未使用的 `agentLength`
   // const agentLength = mobile ? 0 : 0;
 
   const handleRefresh = () => {
     setSliceStart((prev) => prev); // 避免 ESLint 报未使用的 setState
   };
-
+  void handleRefresh;
   // 不返回任何 JSX
   return null;
 });

@@ -10,13 +10,7 @@ tags:
 
 # 使用 Docker Compose 部署 LobeChat 服务端数据库版本
 
-<div style={{display:"flex", gap: 4}}>
-  [![][docker-release-shield]][docker-release-link]
-
-  [![][docker-size-shield]][docker-size-link]
-
-  [![][docker-pulls-shield]][docker-pulls-link]
-</div>
+<div style={{display:"flex", gap: 4}} />
 
 <Callout type="warning">
   **Docker 部署限制说明**
@@ -30,17 +24,7 @@ tags:
 
 ## 快速启动
 
-<Callout type="info">
-  **系统兼容性说明**
-
-  - 支持 Unix 环境（Linux/macOS）的一键部署
-
-  - Windows 用户需通过 [WSL 2](https://aka.ms/wsl) 运行
-
-  - 一键启动脚本为首次部署专用，非首次部署请参考 [自定义部署](#自定义部署) 章节
-
-  - 端口占用检查：确保 `3210`、`8000`、`9000`、`9001` 端口可用
-</Callout>
+<Callout type="info" />
 
 执行以下命令初始化部署环境，目录 `lobe-chat-db` 将用于存放你的配置文件和后续的数据库文件。
 
@@ -821,10 +805,3 @@ networks:
   lobe-network:
     driver: bridge
 ```
-
-[docker-pulls-link]: https://hub.docker.com/r/lobehub/lobe-chat-database
-[docker-pulls-shield]: https://img.shields.io/docker/pulls/lobehub/lobe-chat-database?color=45cc11&labelColor=black&style=flat-square
-[docker-release-link]: https://hub.docker.com/r/lobehub/lobe-chat-database
-[docker-release-shield]: https://img.shields.io/docker/v/lobehub/lobe-chat-database?color=369eff&label=docker&labelColor=black&logo=docker&logoColor=white&style=flat-square&sort=semver
-[docker-size-link]: https://hub.docker.com/r/lobehub/lobe-chat-database
-[docker-size-shield]: https://img.shields.io/docker/image-size/lobehub/lobe-chat-database?color=369eff&labelColor=black&style=flat-square&sort=semver

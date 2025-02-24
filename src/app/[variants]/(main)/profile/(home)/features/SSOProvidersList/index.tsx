@@ -55,7 +55,7 @@ export const SSOProvidersList = memo(() => {
       title: <span style={providerNameStyle}>{t('profile.sso.unlink.title', { provider })}</span>,
     });
   };
-
+  // return null
   return isLoading ? (
     <Flexbox align={'center'} gap={4} horizontal>
       <ActionIcon icon={RotateCw} spin />
