@@ -45,7 +45,7 @@ export interface ModelListAction {
     options: { label?: string; value?: string }[],
   ) => Promise<void>;
 
-  updateKeyVaultConfig: <T extends GlobalLLMProviderKey>(
+  updateKeyVaultConfig: <T extends keyof UserKeyVaults>(
     provider: T,
     config: Partial<UserKeyVaults[T]>,
   ) => Promise<void>;

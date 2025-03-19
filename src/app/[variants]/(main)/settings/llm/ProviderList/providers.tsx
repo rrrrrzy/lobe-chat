@@ -35,6 +35,7 @@ import {
   XAIProviderCard,
   ZeroOneProviderCard,
   ZhiPuProviderCard,
+  MapleProviderCard,
 } from '@/config/modelProviders';
 
 import { ProviderItem } from '../type';
@@ -98,6 +99,7 @@ export const useProviderList = (): ProviderItem[] => {
       SiliconCloudProviderCard,
       HigressProviderCard,
       GiteeAIProviderCard,
+      MapleProviderCard,
     ],
     [
       AzureProvider,

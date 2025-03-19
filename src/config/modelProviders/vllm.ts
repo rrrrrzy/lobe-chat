@@ -9,7 +9,7 @@ const VLLM: ModelProviderCard = {
   name: 'vLLM',
   settings: {
     proxyUrl: {
-      placeholder: 'http://localhost:8000/v1',
+      placeholder: 'http://localhost:3000/v1',
     },
     sdkType: 'openai',
     showModelFetcher: true,

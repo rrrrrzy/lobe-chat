@@ -1,4 +1,4 @@
-import { IconAvatarProps, ModelIcon, ProviderIcon } from '@lobehub/icons';
+import { IconAvatarProps, ModelIcon, ProviderIcon } from '@rrrrrzy/icons';
 import { Avatar, Icon, Tooltip } from '@lobehub/ui';
 import { Typography } from 'antd';
 import { createStyles } from 'antd-style';

@@ -29,6 +29,7 @@ config.overrides = [
       'react/jsx-no-undef': 0,
       'react/no-unescaped-entities': 0,
       'unused-imports/no-unused-imports': 'off',
+      'typescript-sort-keys/interface': 'off',
     },
     settings: {
       'mdx/code-blocks': false,

@@ -8,6 +8,7 @@ export { LobeDeepSeekAI } from './deepseek';
 export * from './error';
 export { LobeGoogleAI } from './google';
 export { LobeGroq } from './groq';
+export { LobeMapleAI } from './maple';
 export { LobeMinimaxAI } from './minimax';
 export { LobeMistralAI } from './mistral';
 export { LobeMoonshotAI } from './moonshot';

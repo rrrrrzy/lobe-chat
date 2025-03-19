@@ -25,6 +25,7 @@ import MinimaxProvider from './minimax';
 import MistralProvider from './mistral';
 import MoonshotProvider from './moonshot';
 import NovitaProvider from './novita';
+import MapleProvider from './maple';
 import NvidiaProvider from './nvidia';
 import OllamaProvider from './ollama';
 import OpenAIProvider from './openai';
@@ -63,6 +64,7 @@ export const LOBE_DEFAULT_MODEL_LIST: ChatModelCard[] = [
   MinimaxProvider.chatModels,
   MistralProvider.chatModels,
   MoonshotProvider.chatModels,
+  MapleProvider.chatModels,
   OllamaProvider.chatModels,
   VLLMProvider.chatModels,
   OpenRouterProvider.chatModels,
@@ -102,6 +104,7 @@ export const DEFAULT_MODEL_PROVIDER_LIST = [
   VLLMProvider,
   AnthropicProvider,
   BedrockProvider,
+  MapleProvider,
   GoogleProvider,
   VertexAIProvider,
   DeepSeekProvider,
@@ -174,6 +177,7 @@ export { default as HunyuanProviderCard } from './hunyuan';
 export { default as InternLMProviderCard } from './internlm';
 export { default as JinaProviderCard } from './jina';
 export { default as LMStudioProviderCard } from './lmstudio';
+export { default as MapleProviderCard } from './maple';
 export { default as MinimaxProviderCard } from './minimax';
 export { default as MistralProviderCard } from './mistral';
 export { default as MoonshotProviderCard } from './moonshot';

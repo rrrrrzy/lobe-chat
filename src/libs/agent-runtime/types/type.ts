@@ -46,6 +46,7 @@ export enum ModelProvider {
   InternLM = 'internlm',
   Jina = 'jina',
   LMStudio = 'lmstudio',
+  Maple = 'maple',
   Minimax = 'minimax',
   Mistral = 'mistral',
   Moonshot = 'moonshot',

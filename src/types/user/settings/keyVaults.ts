@@ -48,6 +48,7 @@ export interface UserKeyVaults {
   jina?: OpenAICompatibleKeyVault;
   lmstudio?: OpenAICompatibleKeyVault;
   lobehub?: any;
+  maple?: OpenAICompatibleKeyVault;
   minimax?: OpenAICompatibleKeyVault;
   mistral?: OpenAICompatibleKeyVault;
   moonshot?: OpenAICompatibleKeyVault;

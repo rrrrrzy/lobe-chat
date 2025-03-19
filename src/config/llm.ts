@@ -19,6 +19,9 @@ export const getLLMConfig = () => {
       AZUREAI_ENDPOINT: z.string().optional(),
       AZUREAI_ENDPOINT_KEY: z.string().optional(),
 
+      ENABLED_MAPLE: z.boolean(),
+      MAPLE_API_KEY: z.string().optional(),
+
       ENABLED_ZHIPU: z.boolean(),
       ZHIPU_API_KEY: z.string().optional(),
 
@@ -165,6 +168,9 @@ export const getLLMConfig = () => {
 
       ENABLED_ZHIPU: !!process.env.ZHIPU_API_KEY,
       ZHIPU_API_KEY: process.env.ZHIPU_API_KEY,
+
+      ENABLED_MAPLE: !!process.env.MAPLE_API_KEY,
+      MAPLE_API_KEY: process.env.MAPLE_API_KEY,
 
       ENABLED_DEEPSEEK: !!process.env.DEEPSEEK_API_KEY,
       DEEPSEEK_API_KEY: process.env.DEEPSEEK_API_KEY,

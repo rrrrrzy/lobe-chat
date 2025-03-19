@@ -389,6 +389,11 @@ const ollamaChatModels: AIChatModelCard[] = [
     type: 'chat',
   },
   {
+    contextWindowTokens: 4096,
+    id: 'maple-chat',
+    type: 'chat'
+  },
+  {
     abilities: {
       vision: true,
     },

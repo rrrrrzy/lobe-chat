@@ -11,7 +11,7 @@ export const genServerAiProvidersConfig = (specificConfig: Record<any, any>) => 
   return Object.values(ModelProvider).reduce(
     (config, provider) => {
       const providerUpperCase = provider.toUpperCase();
-      const providerCard = AiModels[provider] as AiFullModelCard[];
+      const providerCard = AiModels[provider as keyof typeof AiModels] as AiFullModelCard[];
 
       if (!providerCard)
         throw new Error(

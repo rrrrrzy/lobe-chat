@@ -41,6 +41,7 @@ import { LobeStepfunAI } from './stepfun';
 import { LobeTaichuAI } from './taichu';
 import { LobeTencentCloudAI } from './tencentcloud';
 import { LobeTogetherAI } from './togetherai';
+import { LobeMapleAI } from './maple';
 import {
   ChatCompetitionOptions,
   ChatStreamPayload,
@@ -160,6 +161,7 @@ class AgentRuntime {
       internlm: Partial<ClientOptions>;
       jina: Partial<ClientOptions>;
       lmstudio: Partial<ClientOptions>;
+      maple: Partial<ClientOptions>;
       minimax: Partial<ClientOptions>;
       mistral: Partial<ClientOptions>;
       moonshot: Partial<ClientOptions>;
@@ -398,6 +400,11 @@ class AgentRuntime {
 
       case ModelProvider.InternLM: {
         runtimeModel = new LobeInternLMAI(params.internlm);
+        break;
+      }
+
+      case ModelProvider.Maple: {
+        runtimeModel = new LobeMapleAI(params.maple);
         break;
       }
 
